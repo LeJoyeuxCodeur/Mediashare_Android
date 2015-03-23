@@ -10,14 +10,22 @@
     tools:context="fr.univ_lille1.iut_info.vergauwb.mediashare_android.Home">
 
     <TextView
-        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="73dp"
-        android:text="HOME !"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="30dp" />
+        android:id="@+id/bonjour"
+        android:layout_marginTop="61dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/reload"
+        android:layout_alignStart="@+id/reload" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recharger"
+        android:id="@+id/reload"
+        android:layout_below="@+id/bonjour"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:onClick="reload" />
 </RelativeLayout>

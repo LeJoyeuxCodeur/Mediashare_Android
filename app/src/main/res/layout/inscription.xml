@@ -13,14 +13,13 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
         android:text="Inscription"
-        android:textSize="30dp" />
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <EditText
-        android:id="@+id/loginCo"
+        android:id="@+id/mailInscr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/loginText"
@@ -44,14 +43,14 @@
         android:id="@+id/TextView01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/loginCo"
+        android:layout_below="@+id/mailInscr"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="21dp"
         android:text="Pseudo"
         android:textSize="20dp" />
 
     <EditText
-        android:id="@+id/pseudo"
+        android:id="@+id/pseudoInscr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/TextView01"
@@ -62,14 +61,14 @@
         android:id="@+id/TextView02"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/pseudo"
+        android:layout_below="@+id/pseudoInscr"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="19dp"
         android:text="Mot de passe"
         android:textSize="20dp" />
 
     <EditText
-        android:id="@+id/mdpCo"
+        android:id="@+id/mdpInscr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/TextView02"
@@ -81,19 +80,29 @@
         android:id="@+id/TextView03"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/mdpCo"
+        android:layout_below="@+id/mdpInscr"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"
         android:text="Confirmez le mot de passe"
         android:textSize="20dp" />
 
     <EditText
-        android:id="@+id/mdp2"
+        android:id="@+id/mdp2Inscr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/TextView03"
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:inputType="textPassword" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inscription"
+        android:id="@+id/inscription"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:onClick="register" />
 
 </RelativeLayout>

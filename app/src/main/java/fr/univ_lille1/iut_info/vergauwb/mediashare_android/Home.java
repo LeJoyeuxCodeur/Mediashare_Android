@@ -1,15 +1,27 @@
 package fr.univ_lille1.iut_info.vergauwb.mediashare_android;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class Home extends Activity{
-	@Override
+    @SuppressLint("NewApi")
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
         setContentView(R.layout.home);
+
+        TextView t = (TextView) findViewById(R.id.bonjour);
+        t.setText("Bonjour " + Data.pseudo + " !");
     }
  
     @Override
@@ -29,4 +41,8 @@ public class Home extends Activity{
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
+    public void reload(View v){
+        Toast.makeText(getApplicationContext(), "Reloading...", Toast.LENGTH_SHORT).show();
+    }
 }

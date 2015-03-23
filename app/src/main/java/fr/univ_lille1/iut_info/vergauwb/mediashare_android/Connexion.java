@@ -1,18 +1,10 @@
 package fr.univ_lille1.iut_info.vergauwb.mediashare_android;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.List;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -23,22 +15,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
 
 public class Connexion extends Activity{
 	public void connect(View v){
 		try{
-			EditText et = (EditText) findViewById(R.id.loginCo);
+			EditText et = (EditText) findViewById(R.id.mailInscr);
 			String login = et.getText().toString();
 			
-			et = (EditText) findViewById(R.id.mdpCo);
+			et = (EditText) findViewById(R.id.mdpInscr);
 			String mdp = et.getText().toString();
 
-            // Changer l'adresse à chaque fois
-			URL obj = new URL("http://bouleau09.iut-infobio.priv.univ-lille1.fr:8080/v1/connect");
+			URL obj = new URL(Data.URL+"/connect");
 			HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 			
 			con.setRequestMethod("POST");
@@ -71,8 +61,12 @@ public class Connexion extends Activity{
             JSONObject response = new JSONObject(lineTmp);
             int id = response.getInt("id");
 
-            if(id != -1)
-				startActivity(new Intent(Connexion.this, Home.class));
+            if(id != -1) {
+                startActivity(new Intent(Connexion.this, Home.class));
+                Data.pseudo = login;
+            }
+            else
+                Toast.makeText(getApplicationContext(), "Erreur, login/password incorrect", Toast.LENGTH_SHORT).show();
 		} catch (Exception e){
 			e.printStackTrace();
 		}

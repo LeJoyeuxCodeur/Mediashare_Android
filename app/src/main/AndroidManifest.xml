@@ -28,8 +28,5 @@
         <activity android:name=".Connexion" />
         <activity android:name=".Inscription" />
         <activity android:name=".Home" />
-        <activity android:name=".SQLiteConnection" />
-        <activity android:name=".User" />
-                
     </application>
 </manifest>
