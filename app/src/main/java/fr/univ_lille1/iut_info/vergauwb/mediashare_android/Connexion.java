@@ -6,6 +6,7 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -25,6 +26,7 @@ import android.widget.EditText;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONObject;
 
 public class Connexion extends Activity{
 	public void connect(View v){
@@ -36,7 +38,7 @@ public class Connexion extends Activity{
 			String mdp = et.getText().toString();
 
             // Changer l'adresse à chaque fois
-			URL obj = new URL("http://bouleau08.iut-infobio.priv.univ-lille1.fr:8080/v1/connect");
+			URL obj = new URL("http://bouleau09.iut-infobio.priv.univ-lille1.fr:8080/v1/connect");
 			HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 			
 			con.setRequestMethod("POST");
@@ -45,46 +47,36 @@ public class Connexion extends Activity{
 		    con.setRequestProperty("Accept","*/*");
 			con.setDoOutput(true);
 
-            String urlParameters = "pseudo=" + login + "&mdp=" + mdp;
+            String json = "{'pseudo':'" + login + "','mdp':'" + mdp + "'}";
+            JSONObject jsonObject = new JSONObject(json);
+
+            DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+            wr.writeBytes(jsonObject.toString());
+            wr.flush();
+            wr.close();
 
             int responseCode = con.getResponseCode();
-            System.out.println("Post parameters : " + urlParameters);
+            System.out.println("Post parameters : " + json.toString());
             System.out.println("Response Code : " + responseCode);
 
-            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-            String inputLine;
-            StringBuffer response = new StringBuffer();
+            String line, lineTmp="";
+            BufferedReader reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
-            while ((inputLine = in.readLine()) != null)
-                response.append(inputLine);
-            in.close();
+            while ((line = reader.readLine()) != null) {
+                lineTmp = line;
+                System.out.println(line);
+            }
+            reader.close();
 
-            System.out.println(response.toString());
+            JSONObject response = new JSONObject(lineTmp);
+            int id = response.getInt("id");
 
-			if(responseCode == HttpURLConnection.HTTP_OK)
+            if(id != -1)
 				startActivity(new Intent(Connexion.this, Home.class));
 		} catch (Exception e){
 			e.printStackTrace();
 		}
 	}
-
-    private String getQuery(List<NameValuePair> params) throws UnsupportedEncodingException {
-        StringBuilder result = new StringBuilder();
-        boolean first = true;
-
-        for (NameValuePair pair : params){
-            if (first)
-                first = false;
-            else
-                result.append("&");
-
-            result.append(URLEncoder.encode(pair.getName(), "UTF-8"));
-            result.append("=");
-            result.append(URLEncoder.encode(pair.getValue(), "UTF-8"));
-        }
-
-        return result.toString();
-    }
 
 	@SuppressLint("NewApi")
 	@Override
