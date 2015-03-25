@@ -41,5 +41,6 @@
         android:text="Nouveau Post"
         android:id="@+id/newPost"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="newPost" />
 </RelativeLayout>

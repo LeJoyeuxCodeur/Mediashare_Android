@@ -110,4 +110,13 @@ public class Home extends Activity{
             e.printStackTrace();
         }
     }
+
+    public void newPost(View v){
+        try {
+            startActivity(new Intent(Home.this, UploadFile.class));
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
 }
