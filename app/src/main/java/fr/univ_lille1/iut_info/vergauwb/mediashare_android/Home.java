@@ -121,4 +121,11 @@ public class Home extends Activity{
         startActivity(new Intent(Home.this, UploadFile.class));
     }
 
+    public void recherche(View v){
+        startActivity(new Intent(Home.this, Recherche.class));
+    }
+
+    public void profil(View v){
+        startActivity(new Intent(Home.this, Profil.class));
+    }
 }

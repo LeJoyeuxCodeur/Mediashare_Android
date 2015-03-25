@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fond"
+    android:id="@+id/"
+    android:weightSum="1">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deconnexion"
+        android:id="@+id/deconnect_bt"
+        android:layout_gravity="right"
+        android:onClick="deconnexion" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="Upload"
+        android:id="@+id/upload_bt"
+        android:layout_weight="0.14"
+        android:onClick="newPost" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recherche"
+        android:id="@+id/recherche_bt"
+        android:layout_gravity="right"
+        android:onClick="recherche" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modifier le profil"
+        android:id="@+id/profil_modify_bt"
+        android:layout_gravity="center_horizontal"
+        android:onClick="modifierProfil" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mur des posts"
+        android:id="@+id/mur_bt"
+        android:onClick="menu" />
+</LinearLayout>

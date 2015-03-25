@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="fr.univ_lille1.iut_info.vergauwb.mediashare_android.Home">
+    tools:context="fr.univ_lille1.iut_info.vergauwb.mediashare_android.Home"
+    android:id="@+id/">
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,7 +24,7 @@
         android:id="@+id/reload"
         android:onClick="reload"
         android:textSize="10dp"
-        android:layout_alignTop="@+id/deconnexion"
+        android:layout_below="@+id/deconnexion"
         android:layout_centerHorizontal="true" />
 
     <ListView
@@ -38,23 +39,42 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nouveau Post"
+        android:text="Upload"
         android:id="@+id/newPost"
         android:onClick="newPost"
         android:textSize="10dp"
-        android:layout_above="@+id/bonjour"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/recherche_bt"
+        android:layout_toEndOf="@+id/recherche_bt" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Deconnexion"
         android:id="@+id/deconnexion"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:onClick="deconnexion"
-        android:layout_centerHorizontal="true"
-        android:textSize="10dp" />
+        android:textSize="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/profile_bt"
+        android:layout_toEndOf="@+id/profile_bt" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recherche"
+        android:id="@+id/recherche_bt"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="recherche" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profil"
+        android:id="@+id/profile_bt"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/newPost"
+        android:layout_toEndOf="@+id/newPost"
+        android:onClick="profil" />
 </RelativeLayout>
