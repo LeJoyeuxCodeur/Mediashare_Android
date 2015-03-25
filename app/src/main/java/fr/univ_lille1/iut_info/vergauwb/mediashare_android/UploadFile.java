@@ -3,11 +3,16 @@ package fr.univ_lille1.iut_info.vergauwb.mediashare_android;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+
+import java.io.InputStream;
 
 public class UploadFile extends Activity{
     @SuppressLint("NewApi")
@@ -36,11 +41,36 @@ public class UploadFile extends Activity{
         return super.onOptionsItemSelected(item);
     }
 
-    public void selectFile(View v){
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("*/*");
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
+    public void selectFile(View v) {
+        try {
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            intent.setType("*/*");
+            intent.addCategory(Intent.CATEGORY_OPENABLE);
 
-        startActivityForResult(Intent.createChooser(intent, "Select a File to Upload"), 0);
+            startActivityForResult(Intent.createChooser(intent, "Select a File to Upload"), 0);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        try {
+            InputStream input;
+            Bitmap bmp;
+
+            input = getApplicationContext().getContentResolver().openInputStream(data.getData());
+            bmp = BitmapFactory.decodeStream(input);
+
+            System.out.println(bmp.toString());
+
+            ImageView iv = (ImageView) findViewById(R.id.media); // mettre les metadata à la place
+            iv.setImageBitmap(bmp);
+
+            // Coder envoi au serveur
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

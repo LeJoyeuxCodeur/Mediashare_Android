@@ -17,9 +17,8 @@
         android:text="Upload"
         android:id="@+id/upload"
         android:textSize="40dp"
-        android:layout_below="@+id/description"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="63dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 
 
@@ -30,17 +29,27 @@
         android:text="Parcourir..."
         android:id="@+id/parcourir"
         android:textSize="30dp"
-        android:layout_above="@+id/description"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="63dp"
-        android:onClick="selectFile" />
+        android:onClick="selectFile"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/description"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:text="Description..." />
+        android:text="Description..."
+        android:layout_above="@+id/upload"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/media"
+        android:layout_marginTop="102dp"
+        android:minHeight="100dp"
+        android:minWidth="100dp"
+        android:layout_below="@+id/parcourir"
+        android:layout_alignLeft="@+id/upload"
+        android:layout_alignStart="@+id/upload" />
 
 </RelativeLayout>

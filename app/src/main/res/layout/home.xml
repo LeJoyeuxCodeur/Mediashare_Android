@@ -22,7 +22,8 @@
         android:text="Recharger"
         android:id="@+id/reload"
         android:onClick="reload"
-        android:layout_alignParentTop="true"
+        android:textSize="10dp"
+        android:layout_alignTop="@+id/deconnexion"
         android:layout_centerHorizontal="true" />
 
     <ListView
@@ -39,9 +40,11 @@
         android:layout_height="wrap_content"
         android:text="Nouveau Post"
         android:id="@+id/newPost"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="newPost"/>
+        android:onClick="newPost"
+        android:textSize="10dp"
+        android:layout_above="@+id/bonjour"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -52,5 +55,6 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:onClick="deconnexion"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:textSize="10dp" />
 </RelativeLayout>
