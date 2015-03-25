@@ -29,5 +29,6 @@
         <activity android:name=".Inscription" />
         <activity android:name=".Home" />
         <activity android:name=".Contact"/>
+        <activity android:name=".UploadFile" />
     </application>
 </manifest>

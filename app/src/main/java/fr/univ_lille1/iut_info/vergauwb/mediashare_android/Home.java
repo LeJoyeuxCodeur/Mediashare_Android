@@ -111,10 +111,14 @@ public class Home extends Activity{
         }
     }
 
-    public void deconnexion(View v){
-        Data.pseudo="";
+    public void deconnexion(View v) {
+        Data.pseudo = "";
         Toast.makeText(getApplicationContext(), "Déconnexion reussie", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(Home.this, MainActivity.class));
+    }
+
+    public void newPost(View v){
+        startActivity(new Intent(Home.this, UploadFile.class));
     }
 
 }

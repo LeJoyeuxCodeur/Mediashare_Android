@@ -40,8 +40,8 @@
         android:text="Nouveau Post"
         android:id="@+id/newPost"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/bonjour"
-        android:layout_toEndOf="@+id/bonjour" />
+        android:layout_centerHorizontal="true"
+        android:onClick="newPost"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -51,5 +51,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:onClick="deconnexion" />
+        android:onClick="deconnexion"
+        android:layout_centerHorizontal="true"/>
 </RelativeLayout>
