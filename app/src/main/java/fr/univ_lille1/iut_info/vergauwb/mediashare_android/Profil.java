@@ -46,7 +46,7 @@ public class Profil extends Activity{
     }
 
     public void modifierProfil(View v){
-        startActivity(new Intent(Profil.this, ProfilModifier.class));
+    //    startActivity(new Intent(Profil.this, ProfilModifier.class));
     }
 
     public void newPost(View v){

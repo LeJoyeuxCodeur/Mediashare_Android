@@ -9,7 +9,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="fr.univ_lille1.iut_info.vergauwb.mediashare_android.UploadFile">
 
-
     <Button
         style="@style/AppBaseTheme"
         android:layout_width="wrap_content"
@@ -18,7 +17,8 @@
         android:id="@+id/upload"
         android:textSize="40dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="upload" />
 
 
 
@@ -41,15 +41,13 @@
         android:layout_above="@+id/upload"
         android:layout_centerHorizontal="true" />
 
-    <ImageView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/media"
-        android:layout_marginTop="102dp"
-        android:minHeight="100dp"
-        android:minWidth="100dp"
         android:layout_below="@+id/parcourir"
-        android:layout_alignLeft="@+id/upload"
-        android:layout_alignStart="@+id/upload" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="102dp" />
 
 </RelativeLayout>
