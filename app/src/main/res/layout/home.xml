@@ -14,18 +14,32 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/bonjour"
-        android:layout_marginTop="61dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/reload"
-        android:layout_alignStart="@+id/reload" />
+        android:layout_below="@+id/reload" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Recharger"
         android:id="@+id/reload"
+        android:onClick="reload"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/liste"
         android:layout_below="@+id/bonjour"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp"
-        android:onClick="reload" />
+        android:layout_alignRight="@+id/reload"
+        android:layout_alignEnd="@+id/reload"
+        android:choiceMode="none" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nouveau Post"
+        android:id="@+id/newPost"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
