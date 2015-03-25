@@ -33,10 +33,16 @@ public class MainActivity extends ActionBarActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
 	public void connexion(View v){
         startActivity(new Intent(MainActivity.this, Connexion.class));
 	}
+
 	public void inscription(View v){
         startActivity(new Intent(MainActivity.this, Inscription.class));
+	}
+
+    public void contacts(View v){
+        startActivity(new Intent(MainActivity.this, Contact.class));
 	}
 }

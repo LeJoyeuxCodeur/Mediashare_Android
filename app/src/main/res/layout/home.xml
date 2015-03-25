@@ -23,17 +23,16 @@
         android:id="@+id/reload"
         android:onClick="reload"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_centerHorizontal="true" />
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/liste"
         android:layout_below="@+id/bonjour"
-        android:layout_alignRight="@+id/reload"
-        android:layout_alignEnd="@+id/reload"
-        android:choiceMode="none" />
+        android:choiceMode="none"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -41,5 +40,16 @@
         android:text="Nouveau Post"
         android:id="@+id/newPost"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_toRightOf="@+id/bonjour"
+        android:layout_toEndOf="@+id/bonjour" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deconnexion"
+        android:id="@+id/deconnexion"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="deconnexion" />
 </RelativeLayout>

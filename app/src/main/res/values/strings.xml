@@ -2,7 +2,11 @@
 <resources>
 
     <string name="app_name">Mediashare_Android</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+    <string name="contact_bryan">Bryan Vergauwen</string>
+    <string name="contact_deranton">Deranton Antoine</string>
+    <string name="contact_dujardin">Dujardin Yann</string>
+    <string name="contact_cuvillier">Cuvillier Alexandre</string>
+    <string name="contact_members">Membres du projet:</string>
+    <string name="contacts">Contacts</string>
 </resources>

@@ -110,4 +110,11 @@ public class Home extends Activity{
             e.printStackTrace();
         }
     }
+
+    public void deconnexion(View v){
+        Data.pseudo="";
+        Toast.makeText(getApplicationContext(), "Déconnexion reussie", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(Home.this, MainActivity.class));
+    }
+
 }
