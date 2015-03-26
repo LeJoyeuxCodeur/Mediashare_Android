@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fond">
+
+    <LinearLayout
+        android:layout_margin="16dp"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:weightSum="4"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Mur des posts"
+            android:id="@+id/mur_bt"
+            android:onClick="menu" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Recherche"
+            android:id="@+id/recherche_bt"
+            android:layout_gravity="right"
+            android:onClick="recherche" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Upload"
+            android:id="@+id/upload_bt"
+            android:onClick="newPost" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Deconnexion"
+            android:id="@+id/deconnect_bt"
+            android:layout_gravity="right"
+            android:onClick="deconnexion" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Modifier le profil:"
+        android:id="@+id/profile_title"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Email:"
+        android:id="@+id/Email_txt"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="217dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/mail_saisie"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Mot de passe:"
+        android:id="@+id/mdp_txt"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="167dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/mdp_saisie"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valider"
+        android:id="@+id/valider_bt"
+        android:layout_gravity="center_horizontal"
+        android:onClick="modify" />
+</LinearLayout>
