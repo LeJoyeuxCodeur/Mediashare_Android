@@ -3,42 +3,36 @@ package fr.univ_lille1.iut_info.vergauwb.mediashare_android;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.provider.ContactsContract;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-public class Recherche extends Activity{
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ProfileModify extends Activity{
     @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-        setContentView(R.layout.recherche);
-
-        /*spinner*/
-        Spinner sp_Type = (Spinner) findViewById(R.id.spType);
-
-        ArrayList<String> l = new ArrayList<String>();
-        String[] types;
-        types=getResources().getStringArray(R.array.type_media);
-
-        for(int i=0; i<types.length; i++){
-            l.add(types[i]+"");
-        }
-
-        ArrayAdapter<String> adTypes = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item,
-                l);
-        sp_Type.setAdapter(adTypes);
-
+        setContentView(R.layout.profile_modifier);
     }
 
     @Override
@@ -62,22 +56,22 @@ public class Recherche extends Activity{
     public void deconnexion(View v) {
         Data.pseudo = "";
         Toast.makeText(getApplicationContext(), "Déconnexion reussie", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(Recherche.this, MainActivity.class));
+        startActivity(new Intent(ProfileModify.this, MainActivity.class));
     }
 
     public void newPost(View v){
-        startActivity(new Intent(Recherche.this, UploadFile.class));
+        startActivity(new Intent(ProfileModify.this, UploadFile.class));
     }
 
-    public void profil(View v){
-        startActivity(new Intent(Recherche.this, Profil.class));
+    public void recherche(View v){
+        startActivity(new Intent(ProfileModify.this, Recherche.class));
     }
 
     public void menu(View v){
-        startActivity(new Intent(Recherche.this, Home.class));
+        startActivity(new Intent(ProfileModify.this, Home.class));
     }
 
-    public void chercher(View v){
+    public void modify(View v){
 
     }
 

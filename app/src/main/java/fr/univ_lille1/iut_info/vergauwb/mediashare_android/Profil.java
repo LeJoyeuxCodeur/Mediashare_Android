@@ -57,7 +57,7 @@ public class Profil extends Activity{
         startActivity(new Intent(Profil.this, Recherche.class));
     }
 
-     public void menu(View v){
+    public void menu(View v){
         startActivity(new Intent(Profil.this, Home.class));
     }
 }

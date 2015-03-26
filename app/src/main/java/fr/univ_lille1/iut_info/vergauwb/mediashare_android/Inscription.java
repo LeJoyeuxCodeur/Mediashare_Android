@@ -105,4 +105,13 @@ public class Inscription extends Activity{
             e.printStackTrace();
         }
     }
+
+    public void connexion(View v){
+        startActivity(new Intent(Inscription.this, Connexion.class));
+    }
+
+    public void accueil(View v){
+        startActivity(new Intent(Inscription.this, MainActivity.class));
+    }
+
 }

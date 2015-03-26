@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fond"
-    android:weightSum="1">
+    android:background="@drawable/fond">
 
     <LinearLayout
         android:layout_margin="16dp"
@@ -52,32 +51,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Profil"
-        android:id="@+id/profil_txt"
+        android:text="Modifier le profil:"
+        android:id="@+id/profile_title"
         android:layout_gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Pseudo:"
-        android:id="@+id/pseudo_txt"
+        android:text="Email:"
+        android:id="@+id/Email_txt"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="217dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/mail_saisie"
         android:layout_gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Mail:"
-        android:id="@+id/mail_txt"
+        android:text="Mot de passe:"
+        android:id="@+id/mdp_txt"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="167dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/mdp_saisie"
         android:layout_gravity="center_horizontal" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Modifier le profil"
-        android:id="@+id/profil_modify_bt"
+        android:text="Valider"
+        android:id="@+id/valider_bt"
         android:layout_gravity="center_horizontal"
-        android:onClick="modifierProfil" />
-
+        android:onClick="modify" />
 </LinearLayout>
