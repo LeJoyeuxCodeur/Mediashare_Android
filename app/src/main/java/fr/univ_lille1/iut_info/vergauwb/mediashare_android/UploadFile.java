@@ -109,17 +109,19 @@ public class UploadFile extends Activity{
             byte[] buffer = new byte[bufferSize];
 
             int bytesRead = fileInputStream.read(buffer, 0, bufferSize);
+
             while (bytesRead > 0) {
                 outputStream.write(buffer, 0, bufferSize);
                 bytesAvailable = fileInputStream.available();
                 bufferSize = Math.min(bytesAvailable, maxBufferSize);
                 bytesRead = fileInputStream.read(buffer, 0, bufferSize);
+                System.out.println(bytesRead);
             }
-
             outputStream.writeBytes(lineEnd);
 
             outputStream.writeBytes(twoHyphens + boundary + twoHyphens + lineEnd);
             outputStream.close();
+
 
             // ----------------------------------------------------------------------------------------------------
 
