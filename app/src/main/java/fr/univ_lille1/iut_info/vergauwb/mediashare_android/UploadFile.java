@@ -91,7 +91,7 @@ public class UploadFile extends Activity{
 
             con.setRequestMethod("POST");
             con.setRequestProperty("Connection", "Keep-Alive");
-            con.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
+            con.setRequestProperty("Content-Type", "multipart/form-data;boundary="+boundary);
             con.setDoOutput(true);
             con.setDoInput(true);
             con.setUseCaches(false);
@@ -99,7 +99,7 @@ public class UploadFile extends Activity{
             outputStream = new DataOutputStream(con.getOutputStream());
             outputStream.writeBytes(twoHyphens + boundary + lineEnd);
             outputStream.writeBytes("Content-Disposition: form-data; name=\"" + data.getDataString() + "\"; filename=\"" + data.getDataString() + "\"" + lineEnd);
-            outputStream.writeBytes("Content-Type: application/octet-stream" + lineEnd);
+            outputStream.writeBytes("Content-Type: multipart/form-data" + lineEnd);
             outputStream.writeBytes("Content-Transfer-Encoding: binary" + lineEnd);
             outputStream.writeBytes(lineEnd);
 
@@ -115,6 +115,7 @@ public class UploadFile extends Activity{
                 bufferSize = Math.min(bytesAvailable, maxBufferSize);
                 bytesRead = fileInputStream.read(buffer, 0, bufferSize);
             }
+
             outputStream.writeBytes(lineEnd);
 
             outputStream.writeBytes(twoHyphens + boundary + twoHyphens + lineEnd);
