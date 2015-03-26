@@ -9,4 +9,11 @@
     <string name="contact_cuvillier">Cuvillier Alexandre</string>
     <string name="contact_members">Membres du projet:</string>
     <string name="contacts">Contacts</string>
+    <string-array name="type_media">
+        <item>video</item>
+        <item>Musique</item>
+        <item>Image</item>
+        <item>PDF</item>
+        <item>Autre</item>
+    </string-array>
 </resources>

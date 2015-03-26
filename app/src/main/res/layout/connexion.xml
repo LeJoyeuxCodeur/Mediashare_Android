@@ -70,4 +70,24 @@
         android:onClick="connect"
         android:text="Connexion" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Accueil"
+        android:id="@+id/acueil_bt"
+        android:layout_below="@+id/connectButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="accueil" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inscription"
+        android:id="@+id/inscription_bt"
+        android:layout_alignTop="@+id/acueil_bt"
+        android:layout_toRightOf="@+id/mdpText"
+        android:layout_toEndOf="@+id/mdpText"
+        android:onClick="inscription" />
+
 </RelativeLayout>

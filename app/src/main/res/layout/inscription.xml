@@ -100,9 +100,29 @@
         android:layout_height="wrap_content"
         android:text="Inscription"
         android:id="@+id/inscription"
+        android:onClick="register"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:onClick="register" />
+        android:layout_alignRight="@+id/TextView02"
+        android:layout_alignEnd="@+id/TextView02" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Accueil"
+        android:id="@+id/accueil_bt"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/textView1"
+        android:layout_toStartOf="@+id/textView1"
+        android:onClick="accueil" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connexion"
+        android:id="@+id/connexion_bt"
+        android:layout_alignTop="@+id/inscription"
+        android:layout_toRightOf="@+id/textView1"
+        android:layout_toEndOf="@+id/textView1"
+        android:onClick="connexion" />
 
 </RelativeLayout>

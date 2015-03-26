@@ -8,7 +8,11 @@ import android.os.StrictMode;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class Recherche extends Activity{
     @SuppressLint("NewApi")
@@ -18,6 +22,23 @@ public class Recherche extends Activity{
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         setContentView(R.layout.recherche);
+
+        /*spinner*/
+        Spinner sp_Type = (Spinner) findViewById(R.id.spType);
+
+        ArrayList<String> l = new ArrayList<String>();
+        String[] types;
+        types=getResources().getStringArray(R.array.type_media);
+
+        for(int i=0; i<types.length; i++){
+            l.add(types[i]+"");
+        }
+
+        ArrayAdapter<String> adTypes = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item,
+                l);
+        sp_Type.setAdapter(adTypes);
+
     }
 
     @Override

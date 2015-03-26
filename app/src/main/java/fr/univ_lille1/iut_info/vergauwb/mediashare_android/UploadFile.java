@@ -152,4 +152,23 @@ public class UploadFile extends Activity{
 
         return path;
     }
+
+    public void Home(View v){
+        startActivity(new Intent(UploadFile.this, Home.class));
+    }
+
+    public void Recherche(View v){
+        startActivity(new Intent(UploadFile.this, Recherche.class));
+    }
+
+    public void Profil(View v){
+        startActivity(new Intent(UploadFile.this, Profil.class));
+    }
+
+    public void Deconnexion(View v){
+        Data.pseudo = "";
+        Toast.makeText(getApplicationContext(), "Déconnexion reussie", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(UploadFile.this, MainActivity.class));
+    }
+
 }

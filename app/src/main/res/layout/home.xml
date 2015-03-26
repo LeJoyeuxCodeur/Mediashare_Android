@@ -14,7 +14,10 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/bonjour"
-        android:layout_below="@+id/reload" />
+
+        android:layout_below="@+id/reload"
+        android:layout_alignLeft="@+id/reload"
+        android:layout_alignStart="@+id/reload" />
 
     <Button
         android:layout_width="wrap_content"

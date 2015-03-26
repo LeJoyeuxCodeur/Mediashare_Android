@@ -5,29 +5,72 @@
     android:background="@drawable/fond"
     android:weightSum="1">
 
-    <Button
+    <LinearLayout
+        android:layout_margin="16dp"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:weightSum="4"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Mur des posts"
+            android:id="@+id/mur_bt"
+            android:onClick="menu" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Recherche"
+            android:id="@+id/recherche_bt"
+            android:layout_gravity="right"
+            android:onClick="recherche" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Upload"
+            android:id="@+id/upload_bt"
+            android:onClick="newPost" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Deconnexion"
+            android:id="@+id/deconnect_bt"
+            android:layout_gravity="right"
+            android:onClick="deconnexion" />
+
+    </LinearLayout>
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Deconnexion"
-        android:id="@+id/deconnect_bt"
-        android:layout_gravity="right"
-        android:onClick="deconnexion" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Profil"
+        android:id="@+id/profil_txt"
+        android:layout_gravity="center_horizontal" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:text="Upload"
-        android:id="@+id/upload_bt"
-        android:layout_weight="0.14"
-        android:onClick="newPost" />
-
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recherche"
-        android:id="@+id/recherche_bt"
-        android:layout_gravity="right"
-        android:onClick="recherche" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Pseudo:"
+        android:id="@+id/pseudo_txt"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Mail:"
+        android:id="@+id/mail_txt"
+        android:layout_gravity="center_horizontal" />
 
     <Button
         android:layout_width="wrap_content"
@@ -37,10 +80,4 @@
         android:layout_gravity="center_horizontal"
         android:onClick="modifierProfil" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mur des posts"
-        android:id="@+id/mur_bt"
-        android:onClick="menu" />
 </LinearLayout>

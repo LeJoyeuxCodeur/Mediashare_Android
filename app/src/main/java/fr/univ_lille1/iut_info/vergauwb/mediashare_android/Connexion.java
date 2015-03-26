@@ -100,4 +100,12 @@ public class Connexion extends Activity{
 		}
 		return super.onOptionsItemSelected(item);
     }
+
+    public void accueil(View v){
+        startActivity(new Intent(Connexion.this, MainActivity.class));
+    }
+
+    public void inscription(View v){
+        startActivity(new Intent(Connexion.this, Inscription.class));
+    }
 }

@@ -9,6 +9,60 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="fr.univ_lille1.iut_info.vergauwb.mediashare_android.UploadFile">
 
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:weightSum="4"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Mur des posts"
+            android:id="@+id/mur_posts_bt"
+            android:layout_alignTop="@+id/recherche_bt"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:onClick="Home" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Recherche"
+            android:id="@+id/recherche_bt"
+            android:layout_alignBottom="@+id/media"
+            android:layout_alignRight="@+id/upload"
+            android:layout_alignEnd="@+id/upload"
+            android:onClick="Recherche" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Profil"
+            android:id="@+id/profil_bt"
+            android:layout_centerVertical="true"
+            android:layout_alignRight="@+id/media"
+            android:layout_alignEnd="@+id/media"
+            android:onClick="Profil" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Deconnexion"
+            android:id="@+id/deconnexion_bt"
+            android:layout_alignTop="@+id/profil_bt"
+            android:layout_toRightOf="@+id/description"
+            android:layout_toEndOf="@+id/description"
+            android:onClick="Deconnexion" />
+    </LinearLayout>
+
     <Button
         style="@style/AppBaseTheme"
         android:layout_width="wrap_content"
@@ -20,8 +74,6 @@
         android:layout_centerHorizontal="true"
         android:onClick="upload" />
 
-
-
     <Button
         style="@style/AppBaseTheme"
         android:layout_width="wrap_content"
@@ -30,8 +82,9 @@
         android:id="@+id/parcourir"
         android:textSize="30dp"
         android:onClick="selectFile"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -46,8 +99,29 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/media"
-        android:layout_below="@+id/parcourir"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="102dp" />
+        android:layout_toRightOf="@+id/parcourir"
+        android:layout_alignBottom="@+id/parcourir"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Mediashare"
+        android:id="@+id/Title_page"
+        android:layout_marginTop="55dp"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignRight="@+id/description"
+        android:layout_alignEnd="@+id/description" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Choisissez un fichier à uploader..."
+        android:id="@+id/text_uploadchoice"
+        android:layout_below="@+id/Title_page"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
